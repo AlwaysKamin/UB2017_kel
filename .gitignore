@@ -1,2 +1,5 @@
 #idea stuff
 .idea/
+
+#Mac stuff
+.DS_Store
