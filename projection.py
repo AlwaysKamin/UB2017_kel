@@ -1,8 +1,8 @@
-import Tkinter as tk
+import tkinter as tk
 
 class FullScreenApp(object):
     def __init__(self):
-        self.tk = Tk()
+        self.tk = tk()
         return self.tk
 
 root=tk.Tk()

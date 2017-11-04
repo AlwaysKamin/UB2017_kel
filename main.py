@@ -1,12 +1,12 @@
-import sys
-import ctypes
+
 from tkinter import *
-#from sdl2 import*
+
 import cv2
 from blockDetection import blockDetection
-class App:
+class GUI:
   def __init__(self, master):
     frame = Frame(master)
+    master.title("Apprentice")
     frame.pack()
     self.button = Button(frame,
                          text="Scan Block",
@@ -22,11 +22,11 @@ def main():
         camera = blockDetection()
         cameraFrame = camera.grabFrames()
         camera.display(cameraFrame)
-        # root = Tk()
-        # root.title("Apprentice")
-        # root.geometry("900x800")
-        # app = App(root)
-        # root.mainloop()
+        root = Tk()
+        root.title("Apprentice")
+        root.geometry("900x800")
+        app = GUI(root)
+        root.mainloop()
 
         # Used for an exit button for now
         key = cv2.waitKey(1) & 0xFF
