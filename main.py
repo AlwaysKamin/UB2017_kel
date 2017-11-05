@@ -16,6 +16,18 @@ class GUI:
                          text="Display on Block",
                          command=quit)
     self.button2.grid(row=0, column=1)
+    self.button3 = Button(frame,
+                          text="Choose Template 1",
+                          command=temp_one)
+    self.button3.grid(row=1, column=0)
+
+def temp_one():
+    block_dem = "firstReadInTest.block"
+    for i in range(len(block_dem)):
+        for j in range(len(block_dem[i])):
+            if j > 0 and j < 3:
+                block_dem[i][j] = 7
+            print(block_dem)
 
 def main():
     while True:
@@ -24,7 +36,7 @@ def main():
         camera.display(cameraFrame)
         root = Tk()
         root.title("Apprentice")
-        root.geometry("900x800")
+        root.geometry("500x400")
         app = GUI(root)
         root.mainloop()
 
