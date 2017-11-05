@@ -47,6 +47,7 @@ def temp_one(temp_choice):
                 print(block_dem)
 
 def cameraMechanics():
+    print("Entering camera Mechanics")
     camera = blockDetection()
     cameraFrame = camera.grabFrames()
     cameraBW = camera.toBW(cameraFrame)
