@@ -28,21 +28,29 @@ class GUI:
                           command=lambda: templateSelection(2))
     self.button2.grid(row=2, column=0)
     self.button3 = Button(frame,
+                          text="Choose Template 3",
+                          width=15,
+                          command=lambda: templateSelection(3))
+    self.button3.grid(row=3, column=0)
+    self.button4 = Button(frame,
                          text="Quit",
                          width=15,
                          command=quit)
-    self.button3.grid(row=3, column=0)
+    self.button4.grid(row=4, column=0)
 
 def templateSelection(choice):
     newTemplate = template2x4()
     if choice == 1:
         newTemplate.template_one()
-        renderer(newTemplate)
+        renderer(newTemplate, 1)
     elif choice ==2:
         newTemplate.template_two()
-        renderer(newTemplate)
+        renderer(newTemplate, 2)
+    elif choice == 3:
+        newTemplate.template_three()
+        renderer(newTemplate, 3)
 
-def renderer(newTemplate2x4):
+def renderer(newTemplate2x4, classifier):
     print("Entering Renderer")
     testProjection = projection()
     numLines = len(newTemplate2x4.x)/2
@@ -53,7 +61,10 @@ def renderer(newTemplate2x4):
         print("inside while: " + str(numLines))
         m =+ 1
         n =+ 1
-        testProjection.draw(newTemplate2x4, m, n)
+        if(classifier == 3):
+            testProjection.drawCircle(newTemplate2x4)
+        else:
+            testProjection.draw(newTemplate2x4, m, n)
         numLines =- 1
     testProjection.display()
 

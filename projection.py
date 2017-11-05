@@ -26,6 +26,14 @@ class projection(Frame):
         self.canvas.pack(fill=BOTH, expand = 1)
         return
 
+    def drawCircle(self, template):
+        print("Drawing Circle")
+        self.init_ui()
+        self.canvas.create_oval(template.x[0], template.y[0], template.x[1], template.y[1], width=10.0, fill="red", outline="red")
+        self.canvas.create_line(template.x[2], template.y[2], template.x[3], template.y[3], width=10.0, fill="red")
+        self.canvas.pack(fill=BOTH, expand=1)
+        return
+
     def display(self):
         print("Displaying")
         self.canvas.pack(fill=BOTH, expand = 1)
