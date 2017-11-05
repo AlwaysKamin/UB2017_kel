@@ -11,7 +11,7 @@ class GUI:
     self.button = Button(frame,
                          text="Scan Block",
                          width=15,
-                         command=cameraMechanics())
+                         command=lambda: cameraMechanics())
     self.button.grid(row=0, column=1)
     self.button2 = Button(frame,
                          text="Display on Block",
@@ -21,13 +21,13 @@ class GUI:
     self.button3 = Button(frame,
                           text="Choose Template 1",
                           width=15,
-                          command=temp_one(1))
+                          command=lambda: temp_one(1))
     self.button3.grid(row=1, column=0)
 
     self.button4 = Button(frame,
                           text="Choose Template 2",
                           width=15,
-                          command=temp_one(2))
+                          command=lambda: temp_one(2))
     self.button4.grid(row=2, column=0)
 
 def temp_one(temp_choice):
