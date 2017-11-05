@@ -69,12 +69,17 @@ def templateSelection(choice):
 def renderer(newTemplate2x4):
     print("Entering Renderer")
     testProjection = projection()
-    numLines = len(newTemplate2x4.x)
+    numLines = len(newTemplate2x4.x)/2
     print(numLines)
+    m = numLines
+    n = numLines + 1
     while(numLines >= 0):
-        testProjection.draw(newTemplate2x4)
+        print("inside while: " + str(numLines))
+        m =+ 1
+        n =+ 1
+        testProjection.draw(newTemplate2x4, m, n)
         numLines =- 1
-        testProjection.display()
+    testProjection.display()
 
 
 # def cameraMechanics():

@@ -5,8 +5,8 @@ class template2x4():
     y = [0, 0, 0, 0]
 
     def template_one(self):
-        self.x = [175, 2000, 1000, 1000]
-        self.y = [100, 100, 100, 250]
+        self.x = [175, 2000, 175, 500]
+        self.y = [100, 300, 120, 10]
 
     #TODO change template_two to something else
     def template_two(self):

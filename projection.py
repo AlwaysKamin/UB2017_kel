@@ -16,10 +16,13 @@ class projection(Frame):
         self.master.title("Lines")
 
 
-    def draw(self, template):
+    def draw(self, template, m, n):
         print("Drawing")
         self.init_ui()
-        self.canvas.create_line(template.x[1], template.y[1], template.x[2], template.y[2], width=10.0, fill="red")
+        print("Printing line at: " + str(template.x[0]) + " " + str(template.y[0]) + " " + str(template.x[1]) + " " + str(template.y[1]))
+        print("Printing line at: " + str(template.x[2]) + " " + str(template.y[2]) + " " + str(template.x[3]) + " " + str(template.y[3]))
+        self.canvas.create_line(template.x[0], template.y[0], template.x[1], template.y[2], width=10.0, fill="red")
+        self.canvas.create_line(template.x[2], template.y[2], template.x[3], template.y[3], width=10.0, fill="red")
         self.canvas.pack(fill=BOTH, expand = 1)
         return
 
