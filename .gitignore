@@ -3,3 +3,4 @@
 
 #Mac stuff
 .DS_Store
+__pycache__/blockDetection.cpython-36.pyc

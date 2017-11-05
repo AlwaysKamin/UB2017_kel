@@ -11,7 +11,7 @@ class GUI:
     self.button = Button(frame,
                          text="Scan Block",
                          width=15,
-                         command=quit)
+                         command=cameraMechanics())
     self.button.grid(row=0, column=1)
     self.button2 = Button(frame,
                          text="Display on Block",
@@ -46,13 +46,18 @@ def temp_one(temp_choice):
                     block_dem[i][j] = 8
                 print(block_dem)
 
-
+def cameraMechanics():
+    camera = blockDetection()
+    cameraFrame = camera.grabFrames()
+    cameraBW = camera.toBW(cameraFrame)
+    cameraThres = camera.threshold(cameraBW)
+    cameraDisplay = camera.locateAndDrawContours(cameraThres, cameraFrame)
+    # camera.display(cameraThres)
+    camera.display(cameraDisplay)
 
 def main():
     while True:
-        camera = blockDetection()
-        cameraFrame = camera.grabFrames()
-        camera.display(cameraFrame)
+
         root = Tk()
         root.title("Apprentice")
         root.geometry("350x200")
@@ -60,10 +65,10 @@ def main():
         root.mainloop()
 
         # Used for an exit button for now
-        key = cv2.waitKey(1) & 0xFF
-        if key == ord("q"):
-            camera.exit()
-            break
+        # key = cv2.waitKey(1) & 0xFF
+        # if key == ord("q"):
+        #     camera.exit()
+        #     break
 
 if __name__ ==  "__main__":
     main()
