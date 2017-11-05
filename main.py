@@ -31,20 +31,25 @@ class GUI:
     self.button4.grid(row=2, column=0)
 
 def temp_one(temp_choice):
-    block_dem = [["x", "x", "x", "x"], ["x", "x", "x", "x"]]
     if temp_choice == 1:
-        for i in range(len(block_dem)):
-            for j in range(len(block_dem[i])):
-                if j == 1:
-                    block_dem[i][j] = 7
-                print(block_dem)
+        x1 = 175
+        y1 = 100
+        x2 = 2000
+        y2 = 100
+        x3 = 1000
+        y3 = 100
+        x4 = 1000
+        y4 = 250
 
     if temp_choice == 2:
-        for i in range(len(block_dem)):
-            for j in range(len(block_dem[i])):
-                if j == 2:
-                    block_dem[i][j] = 8
-                print(block_dem)
+        x1 = 175
+        y1 = 100
+        x2 = 2000
+        y2 = 100
+        x3 = 1000
+        y3 = 100
+        x4 = 1000
+        y4 = 250
 
 def cameraMechanics():
     print("Entering camera Mechanics")

@@ -1,5 +1,5 @@
 from tkinter import Tk, Canvas, Frame, BOTH
-
+import main
 
 class Render(Frame):
     def __init__(self):
@@ -16,8 +16,8 @@ class Render(Frame):
             if ('L' or 'H') in line:
                 self.pack(fill=BOTH, expand=1)
                 canvas = Canvas(self)
-                canvas.create_line(175, 100, 2000, 100, width=10.0, fill="red")
-                canvas.create_line(1000, 100, 1000, 250, width=10.0, fill="red")
+                canvas.create_line(main.x1, main.y1, main.x2, main.y2, width=10.0, fill="red")
+                canvas.create_line(main.x3, main.y3, main.x4, main.y4, width=10.0, fill="red")
                 canvas.pack(fill=BOTH, expand=1)
 
 root = Tk()
