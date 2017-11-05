@@ -3,11 +3,11 @@ from tkinter import Tk, Canvas, Frame, BOTH
 
 class Render(Frame):
     def __init__(self):
-        super().__init__()
+        super().__init__()\
 
-        self.initUI()
+        self.init_ui()
 
-    def initUI(self):
+    def init_ui(self):
         self.master.title("Lines")
         self.pack(fill=BOTH, expand=1)
 
