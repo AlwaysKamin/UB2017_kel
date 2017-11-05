@@ -50,14 +50,8 @@ def temp_one(temp_choice):
 
 
     if temp_choice == 2:
-        x1 = 175
-        y1 = 100
-        x2 = 2000
-        y2 = 100
-        x3 = 1000
-        y3 = 100
-        x4 = 1000
-        y4 = 250
+        x = [175, 2000, 1000, 1000]
+        y = [100, 100, 100, 250]
 
 def renderer():
     print("Entering Renderer")
@@ -86,10 +80,10 @@ def main():
         root.mainloop()
 
         # Used for an exit button for now
-        # key = cv2.waitKey(1) & 0xFF
-        # if key == ord("q"):
-        #     camera.exit()
-        #     break
+         key = cv2.waitKey(1) & 0xFF
+         if key == ord("q"):
+             camera.exit()
+             break
 
 if __name__ ==  "__main__":
     main()
