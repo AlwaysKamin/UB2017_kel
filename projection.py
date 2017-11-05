@@ -1,7 +1,7 @@
 from tkinter import Tk, Canvas, Frame, BOTH
-import main
 
-class Render(Frame):
+
+class projection(Frame):
     def __init__(self):
         super().__init__()\
 
@@ -20,7 +20,13 @@ class Render(Frame):
                 canvas.create_line(main.x3, main.y3, main.x4, main.y4, width=10.0, fill="red")
                 canvas.pack(fill=BOTH, expand=1)
 
+    def draw(self, x, y):
+        return
+
+    def display(self):
+        return
+
 root = Tk()
-ex = Render()
+ex = projection()
 root.attributes('-fullscreen', True)
 root.mainloop()

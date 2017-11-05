@@ -3,6 +3,11 @@ from tkinter import *
 
 import cv2
 from blockDetection import blockDetection
+from projection import projection
+
+global x
+global y
+
 class GUI:
   def __init__(self, master):
     frame = Frame(master)
@@ -16,7 +21,7 @@ class GUI:
     self.button2 = Button(frame,
                          text="Display on Block",
                          width=15,
-                         command=quit)
+                         command=lambda: renderer())
     self.button2.grid(row=0, column=2)
     self.button3 = Button(frame,
                           text="Choose Template 1",
@@ -32,14 +37,17 @@ class GUI:
 
 def temp_one(temp_choice):
     if temp_choice == 1:
-        x1 = 175
-        y1 = 100
-        x2 = 2000
-        y2 = 100
-        x3 = 1000
-        y3 = 100
-        x4 = 1000
-        y4 = 250
+        # x1 = 175
+        # y1 = 100
+        # x2 = 2000
+        # y2 = 100
+        # x3 = 1000
+        # y3 = 100
+        # x4 = 1000
+        # y4 = 250
+        x = [175, 2000, 1000, 1000]
+        y = [100, 100, 100, 250]
+
 
     if temp_choice == 2:
         x1 = 175
@@ -50,6 +58,13 @@ def temp_one(temp_choice):
         y3 = 100
         x4 = 1000
         y4 = 250
+
+def renderer():
+    print("Entering Renderer")
+    testProjection = projection()
+    testProjection.draw(x, y)
+    testProjection.display()
+
 
 def cameraMechanics():
     print("Entering camera Mechanics")
