@@ -1,8 +1,8 @@
 
 from tkinter import *
 
-# import cv2
-# from blockDetection import blockDetection
+import cv2
+from blockDetection import blockDetection
 class GUI:
   def __init__(self, master):
     frame = Frame(master)
@@ -50,20 +50,20 @@ def temp_one(temp_choice):
 
 def main():
     while True:
-        # camera = blockDetection()
-        # cameraFrame = camera.grabFrames()
-        # camera.display(cameraFrame)
+        camera = blockDetection()
+        cameraFrame = camera.grabFrames()
+        camera.display(cameraFrame)
         root = Tk()
         root.title("Apprentice")
         root.geometry("350x200")
         app = GUI(root)
         root.mainloop()
 
-        # # Used for an exit button for now
-        # key = cv2.waitKey(1) & 0xFF
-        # if key == ord("q"):
-        #     camera.exit()
-        #     break
+        # Used for an exit button for now
+        key = cv2.waitKey(1) & 0xFF
+        if key == ord("q"):
+            camera.exit()
+            break
 
 if __name__ ==  "__main__":
     main()
