@@ -1,4 +1,3 @@
-import sys
 from tkinter import Tk, Canvas, Frame, BOTH
 
 
@@ -17,8 +16,8 @@ class Render(Frame):
             if ('L' or 'H') in line:
                 self.pack(fill=BOTH, expand=1)
                 canvas = Canvas(self)
-                canvas.create_line(0, 25, 400, 25)
-                canvas.create_line(10, 2500, 50, 0)
+                canvas.create_line(175, 100, 2000, 100, width=10.0, fill="red")
+                canvas.create_line(1000, 100, 1000, 250, width=10.0, fill="red")
                 canvas.pack(fill=BOTH, expand=1)
 
 root = Tk()
