@@ -1,8 +1,8 @@
 
 from tkinter import *
 
-import cv2
-from blockDetection import blockDetection
+# import cv2
+# from blockDetection import blockDetection
 from projection import projection
 
 global x
@@ -14,14 +14,14 @@ class GUI:
     master.title("Apprentice")
     frame.pack()
     self.button = Button(frame,
-                         text="Scan Block",
+                         text="Quit",
                          width=15,
-                         command=lambda: cameraMechanics())
+                         command=quit)
     self.button.grid(row=0, column=1)
     self.button2 = Button(frame,
                          text="Display on Block",
                          width=15,
-                         command=lambda: renderer())
+                         command=lambda: renderer(x, y))
     self.button2.grid(row=0, column=2)
     self.button3 = Button(frame,
                           text="Choose Template 1",
@@ -47,6 +47,7 @@ def temp_one(temp_choice):
         # y4 = 250
         x = [175, 2000, 1000, 1000]
         y = [100, 100, 100, 250]
+        print("Temp One Selected")
 
 
     if temp_choice == 2:
@@ -59,22 +60,22 @@ def temp_one(temp_choice):
         x4 = 1000
         y4 = 250
 
-def renderer():
+def renderer(x, y):
     print("Entering Renderer")
     testProjection = projection()
     testProjection.draw(x, y)
     testProjection.display()
 
 
-def cameraMechanics():
-    print("Entering camera Mechanics")
-    camera = blockDetection()
-    cameraFrame = camera.grabFrames()
-    cameraBW = camera.toBW(cameraFrame)
-    cameraThres = camera.threshold(cameraBW)
-    cameraDisplay = camera.locateAndDrawContours(cameraThres, cameraFrame)
-    # camera.display(cameraThres)
-    camera.display(cameraDisplay)
+# def cameraMechanics():
+#     print("Entering camera Mechanics")
+#     camera = blockDetection()
+#     cameraFrame = camera.grabFrames()
+#     cameraBW = camera.toBW(cameraFrame)
+#     cameraThres = camera.threshold(cameraBW)
+#     cameraDisplay = camera.locateAndDrawContours(cameraThres, cameraFrame)
+#     # camera.display(cameraThres)
+#     camera.display(cameraDisplay)
 
 def main():
     while True:
