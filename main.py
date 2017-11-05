@@ -34,6 +34,11 @@ class GUI:
                           width=15,
                           command=lambda: temp_one(2))
     self.button4.grid(row=2, column=0)
+    self.button3 = Button(frame,
+                          text="Display on Block",
+                          width=15,
+                          command=quit)
+    self.button5.grid(row=0, column=0)
 
 def temp_one(temp_choice):
     if temp_choice == 1:
@@ -75,7 +80,7 @@ def main():
 
         root = Tk()
         root.title("Apprentice")
-        root.geometry("350x200")
+        root.geometry("400x300")
         app = GUI(root)
         root.mainloop()
 
